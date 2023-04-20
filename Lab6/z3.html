@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Веклич Д.Н.</title>
+                <style>
+
+                </style>
+        </head>
+            <body>
+                <script>
+                    "use strict";
+                    
+                    class Hardware{
+                        constructor(pType, pCapacity, pInterface, pSpindleSpeed){
+                        this.type=pType;
+                        this.capacity=pCapacity;
+                        this.interface=pInterface;
+                        this.SpindleSpeed=pSpindleSpeed;
+                        
+                            Object.defineProperty(this, "FullInfo",{
+                                get(){
+                                   return `${this.type} ${this.capacity} ${this.interface} ${this.SpindleSpeed}`;
+                                },
+
+                                set(value){
+                                   [this.type, this.capacity, this.interface, this.SpindleSpeed] = value.split(" ");
+                                }
+                            });
+                        };
+
+                        info(){
+                            document.write("Тип накопителя: ",this.type);
+                            document.write("<br \/>Объём: ",this.capacity);
+                            document.write("<br \/>Интерфейс: ",this.interface);
+                            document.write("<br \/>Скорость вращения шпинделя: ",this.SpindleSpeed);
+                        }
+                    }
+
+                    let disk1 = new Hardware("HDD","1 TB","SATA III","7200 rpm");
+
+                    disk1.type = "HDD 3.5";
+                    disk1.info();
+
+                </script>
+            </body>
+    </html>

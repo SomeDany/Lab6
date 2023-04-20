@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Веклич Д.Н.</title>
+                
+        </head>
+            <body>
+                <script>
+                    "use strict";
+
+                    let disk = {
+                        type:'HDD',
+                        capacity:'1 TB',
+                        interface:'SATA III',
+                        SpindleSpeed:'7200 rpm',
+                        
+                    };
+                    
+                    disk.info = function(){
+                            document.write("Тип накопителя: ",this.type);
+                            document.write("<br \/>Объём: ",this.capacity);
+                            document.write("<br \/>Интерфейс: ",this.interface);
+                            document.write("<br \/>Скорость вращения шпинделя: ",this.SpindleSpeed);
+                        }  
+                    
+                    disk.info();
+
+                </script>
+            </body>
+    </html>
